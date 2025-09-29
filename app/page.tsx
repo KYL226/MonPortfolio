@@ -1,37 +1,63 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail, ExternalLink, Code, Palette, Smartphone, Monitor, Zap, Star, Globe, Database, Smartphone as Mobile, Palette as Design, Cog, Download } from "lucide-react"
-import TechSlider from "@/components/TechSlider"
-import { ThemeToggle } from "@/components/ThemeToggle"
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  Code,
+  Palette,
+  Smartphone,
+  Monitor,
+  Zap,
+  Star,
+  Globe,
+  Database,
+  Smartphone as Mobile,
+  Palette as Design,
+  Cog,
+  Download,
+} from "lucide-react";
+import TechSlider from "@/components/TechSlider";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState("hero")
-  const [scrollY, setScrollY] = useState(0)
-  const [currentPage, setCurrentPage] = useState(1)
-  const projectsPerPage = 3
+  const [activeSection, setActiveSection] = useState("hero");
+  const [scrollY, setScrollY] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 3;
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const projects = [
     {
       title: "CHATROOM",
-      description: "Plateforme de chat en temps réel avec utilisateur tu choisis ta salle de chat et tu peux discuter avec les autres utilisateurs.",
-      tech: ["next.js", "Node.js", "MongoDB", "Socket.io", "Tailwind CSS", "Shadcn UI","TypeScript"],
+      description:
+        "Plateforme de chat en temps réel avec utilisateur tu choisis ta salle de chat et tu peux discuter avec les autres utilisateurs.",
+      tech: [
+        "next.js",
+        "Node.js",
+        "MongoDB",
+        "Socket.io",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "TypeScript",
+      ],
       image: "/chatroom.png",
       link: "https://chatroom-mav1.onrender.com/",
     },
     {
       title: "ATTESSIA",
-      description: "Application de gestion des attestions des activités scientfiques a l'Université Norbert Zongo.",
+      description:
+        "Application de gestion des attestions des activités scientfiques a l'Université Norbert Zongo.",
       tech: ["php", "mysql", "bootstrap", "html", "css"],
       image: "/attessia.png",
       link: "https://sp-p6.com/attestationmvc/",
@@ -39,7 +65,7 @@ export default function Portfolio() {
     {
       title: "VoiceHub",
       description: "Plateforme de publication en audio",
-      tech: ["php", "mysql", "bootstrap", "html", "css","phpmailer"],
+      tech: ["php", "mysql", "bootstrap", "html", "css", "phpmailer"],
       image: "/voicehub.png",
       link: "https://sp-p6.com/yveslaurent/socio-vocal/",
     },
@@ -66,63 +92,97 @@ export default function Portfolio() {
   link: "https://github.com/iveslaurent/mobile-banking-app",
 },
 */
-
-    
-  ]
+  ];
 
   // Pagination logic
-  const totalPages = Math.ceil(projects.length / projectsPerPage)
-  const startIndex = (currentPage - 1) * projectsPerPage
-  const endIndex = startIndex + projectsPerPage
-  const currentProjects = projects.slice(startIndex, endIndex)
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+  const startIndex = (currentPage - 1) * projectsPerPage;
+  const endIndex = startIndex + projectsPerPage;
+  const currentProjects = projects.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page)
+    setCurrentPage(page);
     // Scroll to projects section
-    const projectsSection = document.getElementById('projets')
+    const projectsSection = document.getElementById("projets");
     if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' })
+      projectsSection.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   const services = [
     {
       title: "Développement Web Frontend",
-      description: "Création d'interfaces utilisateur modernes et interactives avec React, Next.js et TypeScript.",
+      description:
+        "Création d'interfaces utilisateur modernes et interactives avec React, Next.js et TypeScript.",
       icon: <Globe className="w-8 h-8 text-accent" />,
-      features: ["Interfaces responsives", "Animations fluides", "Performance optimisée", "SEO friendly"]
+      features: [
+        "Interfaces responsives",
+        "Animations fluides",
+        "Performance optimisée",
+        "SEO friendly",
+      ],
     },
     {
       title: "Développement Mobile",
-      description: "Applications mobiles cross-platform avec React Native pour iOS et Android.",
+      description:
+        "Applications mobiles cross-platform avec React Native pour iOS et Android.",
       icon: <Mobile className="w-8 h-8 text-secondary" />,
-      features: ["Design natif", "Performance optimale", "Intégration API", "Tests automatisés"]
+      features: [
+        "Design natif",
+        "Performance optimale",
+        "Intégration API",
+        "Tests automatisés",
+      ],
     },
     {
       title: "UI/UX Design",
-      description: "Conception d'expériences utilisateur exceptionnelles avec des interfaces intuitives.",
+      description:
+        "Conception d'expériences utilisateur exceptionnelles avec des interfaces intuitives.",
       icon: <Design className="w-8 h-8 text-accent" />,
-      features: ["Prototypage", "Design system", "Accessibilité", "Tests utilisateurs"]
+      features: [
+        "Prototypage",
+        "Design system",
+        "Accessibilité",
+        "Tests utilisateurs",
+      ],
     },
     {
       title: "Développement Backend",
-      description: "APIs robustes et sécurisées avec Node.js, Express et bases de données modernes.",
+      description:
+        "APIs robustes et sécurisées avec Node.js, Express et bases de données modernes.",
       icon: <Database className="w-8 h-8 text-secondary" />,
-      features: ["APIs REST/GraphQL", "Authentification", "Base de données", "Sécurité"]
+      features: [
+        "APIs REST/GraphQL",
+        "Authentification",
+        "Base de données",
+        "Sécurité",
+      ],
     },
     {
       title: "Consultation Technique",
-      description: "Accompagnement dans vos projets technologiques et architecture de solutions.",
+      description:
+        "Accompagnement dans vos projets technologiques et architecture de solutions.",
       icon: <Cog className="w-8 h-8 text-accent" />,
-      features: ["Audit technique", "Architecture", "Formation équipe", "Mentoring"]
+      features: [
+        "Audit technique",
+        "Architecture",
+        "Formation équipe",
+        "Mentoring",
+      ],
     },
     {
       title: "Maintenance & Support",
-      description: "Maintenance préventive et corrective de vos applications existantes.",
+      description:
+        "Maintenance préventive et corrective de vos applications existantes.",
       icon: <Monitor className="w-8 h-8 text-secondary" />,
-      features: ["Monitoring", "Mises à jour", "Corrections bugs", "Support 24/7"]
-    }
-  ]
+      features: [
+        "Monitoring",
+        "Mises à jour",
+        "Corrections bugs",
+        "Support 24/7",
+      ],
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -130,13 +190,25 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full z-50 glassmorphism">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold glow-effect text-secondary">{"<Dev/>"}</div>
+            <div className="text-2xl font-bold glow-effect text-secondary">
+              {"<Dev/>"}
+            </div>
             <div className="flex items-center space-x-8">
               <div className="hidden md:flex space-x-8">
-                {["Accueil", "À propos", "Projets", "Services", "Compétences", "Contact"].map((item, index) => (
+                {[
+                  "Accueil",
+                  "À propos",
+                  "Projets",
+                  "Services",
+                  "Compétences",
+                  "Contact",
+                ].map((item, index) => (
                   <a
                     key={item}
-                    href={`#${item.toLowerCase().replace("à propos", "about").replace("é", "e")}`}
+                    href={`#${item
+                      .toLowerCase()
+                      .replace("à propos", "about")
+                      .replace("é", "e")}`}
                     className="hover:text-accent transition-colors duration-300 relative group"
                   >
                     {item}
@@ -151,7 +223,10 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="accueil" className="min-h-screen flex items-center justify-center relative">
+      <section
+        id="accueil"
+        className="min-h-screen flex items-center justify-center relative"
+      >
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -167,10 +242,14 @@ export default function Portfolio() {
               <span className="block text-secondary glow-effect">KABORE</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Développeur full-stack junior passionné par la création d'expériences numériques innovantes et futuristes.
+              Développeur full-stack junior passionné par la création
+              d'expériences numériques innovantes et futuristes.
             </p>
             <div className="flex gap-4 justify-center">
-              <Button size="lg" className="neon-border hover:glow-effect transition-all duration-300">
+              <Button
+                size="lg"
+                className="neon-border hover:glow-effect transition-all duration-300"
+              >
                 Voir mes projets
               </Button>
               <Button
@@ -179,17 +258,20 @@ export default function Portfolio() {
                 className="hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 bg-transparent"
                 onClick={() => {
                   try {
-                    const link = document.createElement('a')
-                    link.href = '/images/cv.pdf'
-                    link.download = 'CV_Ives_Laurent_KABORE.pdf'
-                    link.target = '_blank'
-                    document.body.appendChild(link)
-                    link.click()
-                    document.body.removeChild(link)
+                    const link = document.createElement("a");
+                    link.href = "/images/cv.pdf";
+                    link.download = "CV_Ives_Laurent_KABORE.pdf";
+                    link.target = "_blank";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                   } catch (error) {
-                    console.error('Erreur lors du téléchargement du CV:', error)
+                    console.error(
+                      "Erreur lors du téléchargement du CV:",
+                      error
+                    );
                     // Fallback: ouvrir dans un nouvel onglet
-                    window.open('/images/cv.pdf', '_blank')
+                    window.open("/images/cv.pdf", "_blank");
                   }
                 }}
               >
@@ -211,32 +293,48 @@ export default function Portfolio() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="fade-in-up">
-              <h2 className="text-4xl font-bold mb-6 text-secondary">À propos de moi</h2>
+              <h2 className="text-4xl font-bold mb-6 text-secondary">
+                À propos de moi
+              </h2>
               <p className="text-lg mb-6 text-pretty">
-                Développeur web créatif et Passionné par les nouvelles technologies et l'innovation, je transforme les idées en réalités
-                numériques.
+                Développeur web créatif et Passionné par les nouvelles
+                technologies et l'innovation, je transforme les idées en
+                réalités numériques.
               </p>
               <p className="text-lg mb-8 text-pretty">
-                Mon approche combine design moderne, performance optimale et expérience utilisateur exceptionnelle pour
-                créer des solutions qui marquent les esprits.
+                Mon approche combine design moderne, performance optimale et
+                expérience utilisateur exceptionnelle pour créer des solutions
+                qui marquent les esprits.
               </p>
               <div className="flex gap-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="hover:bg-accent hover:text-accent-foreground bg-transparent"
+                <a
+                  href="https://github.com/KYL226"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="hover:bg-accent hover:text-accent-foreground bg-transparent"
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="hover:bg-accent hover:text-accent-foreground bg-transparent"
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    GitHub
+                  </Button>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ives-laurent-kabore-929486317/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Linkedin className="w-4 h-4 mr-2" />
-                  LinkedIn
-                </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="hover:bg-accent hover:text-accent-foreground bg-transparent"
+                  >
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </Button>
+                </a>
               </div>
             </div>
             <div className="slide-in-right">
@@ -250,7 +348,7 @@ export default function Portfolio() {
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-secondary/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                
+
                 {/* Skills Card */}
                 <Card className="glassmorphism p-8 neon-border w-full">
                   <div className="space-y-4">
@@ -277,7 +375,9 @@ export default function Portfolio() {
       {/* Projects Section */}
       <section id="projets" className="py-20 bg-card/50">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12 text-secondary">Mes Projets</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-secondary">
+            Mes Projets
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {currentProjects.map((project, index) => (
               <Card
@@ -293,8 +393,12 @@ export default function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 text-pretty">{project.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-foreground">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 text-pretty">
+                    {project.description}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
                       <Badge key={tech} variant="secondary" className="text-xs">
@@ -308,9 +412,13 @@ export default function Portfolio() {
                     className="w-full hover:bg-accent hover:text-accent-foreground bg-transparent"
                     onClick={() => {
                       if (project.link && project.link !== "#") {
-                        window.open(project.link, '_blank', 'noopener,noreferrer')
+                        window.open(
+                          project.link,
+                          "_blank",
+                          "noopener,noreferrer"
+                        );
                       } else {
-                        console.log('Lien du projet non disponible')
+                        console.log("Lien du projet non disponible");
                       }
                     }}
                   >
@@ -321,7 +429,7 @@ export default function Portfolio() {
               </Card>
             ))}
           </div>
-          
+
           {/* Pagination */}
           <div className="flex justify-center items-center space-x-2">
             <Button
@@ -333,25 +441,27 @@ export default function Portfolio() {
             >
               Précédent
             </Button>
-            
+
             <div className="flex space-x-1">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                <Button
-                  key={page}
-                  variant={currentPage === page ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => handlePageChange(page)}
-                  className={
-                    currentPage === page
-                      ? "bg-accent text-accent-foreground"
-                      : "bg-transparent hover:bg-accent hover:text-accent-foreground"
-                  }
-                >
-                  {page}
-                </Button>
-              ))}
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <Button
+                    key={page}
+                    variant={currentPage === page ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => handlePageChange(page)}
+                    className={
+                      currentPage === page
+                        ? "bg-accent text-accent-foreground"
+                        : "bg-transparent hover:bg-accent hover:text-accent-foreground"
+                    }
+                  >
+                    {page}
+                  </Button>
+                )
+              )}
             </div>
-            
+
             <Button
               variant="outline"
               size="sm"
@@ -368,7 +478,9 @@ export default function Portfolio() {
       {/* Services Section */}
       <section id="services" className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12 text-secondary">Mes Services</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-secondary">
+            Mes Services
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card
@@ -379,12 +491,19 @@ export default function Portfolio() {
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-card/50 mb-4 group-hover:bg-accent/20 transition-colors duration-300">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-foreground">{service.title}</h3>
-                  <p className="text-muted-foreground text-pretty mb-4">{service.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-pretty mb-4">
+                    {service.description}
+                  </p>
                 </div>
                 <div className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-2 text-sm">
+                    <div
+                      key={featureIndex}
+                      className="flex items-center gap-2 text-sm"
+                    >
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
                       <span className="text-muted-foreground">{feature}</span>
                     </div>
@@ -413,14 +532,19 @@ export default function Portfolio() {
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-card/50">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8 text-secondary">Contactez-moi</h2>
+          <h2 className="text-4xl font-bold mb-8 text-secondary">
+            Contactez-moi
+          </h2>
           <p className="text-xl mb-8 text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Prêt à donner vie à votre prochain projet ? Discutons de vos idées et créons quelque chose d'extraordinaire
-            ensemble.
+            Prêt à donner vie à votre prochain projet ? Discutons de vos idées
+            et créons quelque chose d'extraordinaire ensemble.
           </p>
           <Card className="glassmorphism max-w-md mx-auto p-8 neon-border">
             <div className="space-y-4">
-              <Button size="lg" className="w-full hover:glow-effect transition-all duration-300">
+              <Button
+                size="lg"
+                className="w-full hover:glow-effect transition-all duration-300"
+              >
                 <Mail className="w-5 h-5 mr-2" />
                 kaboreyveslaurent00@gmail.com
               </Button>
@@ -448,11 +572,9 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
-            © 2025 Portfolio.
-          </p>
+          <p className="text-muted-foreground">© 2025 Portfolio.</p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
