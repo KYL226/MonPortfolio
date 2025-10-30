@@ -15,6 +15,7 @@ const techLogos = [
   { src: '/images/MongoDB.svg', alt: 'MongoDB' },
   { src: '/images/MySQL.svg', alt: 'MySQL' },
   { src: '/images/Figma.svg', alt: 'Figma' },
+  { src: '/images/api.svg', alt: 'Api' },
 ]
 
 const TechSlider = () => {

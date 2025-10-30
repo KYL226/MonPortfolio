@@ -39,6 +39,29 @@ export default function Portfolio() {
 
   const projects = [
     {
+      title: "NetFlix Clone",
+      description:
+        "Reproduction la Plateforme VOD NetFlix dans l'objectif d'avoir le code source d'un site VOD qui pourra être adapter pour mes projets futurs",
+      tech: [
+        "next.js",
+        "Node.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "TypeScript",
+        "Moyen de paiement",
+      ],
+      image: "/clone_netflix.png",
+      link: "https://clone-netflix-navy.vercel.app/",
+    },
+    {
+      title: "ATTESSIA",
+      description:
+        "Application de gestion des attestions des activités scientfiques a l'Université Norbert Zongo.",
+      tech: ["php", "mysql", "bootstrap", "html", "css"],
+      image: "/attessia.png",
+      link: "https://dupoclic.com/attestationmvc/",
+    },
+    {
       title: "CHATROOM",
       description:
         "Plateforme de chat en temps réel avec utilisateur tu choisis ta salle de chat et tu peux discuter avec les autres utilisateurs.",
@@ -52,22 +75,22 @@ export default function Portfolio() {
         "TypeScript",
       ],
       image: "/chatroom.png",
-      link: "https://chatroom-mav1.onrender.com/",
-    },
-    {
-      title: "ATTESSIA",
-      description:
-        "Application de gestion des attestions des activités scientfiques a l'Université Norbert Zongo.",
-      tech: ["php", "mysql", "bootstrap", "html", "css"],
-      image: "/attessia.png",
-      link: "https://sp-p6.com/attestationmvc/",
+      link: "https://github.com/KYL226/chatroom",
     },
     {
       title: "VoiceHub",
       description: "Plateforme de publication en audio",
       tech: ["php", "mysql", "bootstrap", "html", "css", "phpmailer"],
       image: "/voicehub.png",
-      link: "https://sp-p6.com/yveslaurent/socio-vocal/",
+      link: "https://dupoclic.com/socio-vocal/",
+    },
+    {
+      title: "Jeu de couleur",
+      description:
+        "Site web pour permettre aux enfants de jouer a un Jeu de Reconnaissance des Couleurs quand une voie leur dit leur la couleur",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "/jeu_couleur.png",
+      link: "https://kyl226.github.io/jeux_enfant/",
     },
     /*
 {
