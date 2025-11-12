@@ -38,6 +38,22 @@ export default function Portfolio() {
   }, []);
 
   const projects = [
+     {
+      title: "AgriPro",
+      description:
+        "AgriPro est une plateforme web communautaire et intelligente dédiée au monde agricole. Elle a été conçue pour répondre aux principaux défis rencontrés par les agriculteurs : l’isolement, la difficulté à vendre leurs produits, le manque d’accès à l’information et l’absence d’un espace centralisé pour échanger.",
+      tech: [
+        "next.js",
+        "Node.js",
+        "Mysql",
+        "WatherAPI",
+        "Tailwind CSS",
+        "Cloudinary",
+        "TypeScript",
+      ],
+      image: "/agripro.png",
+      link: "https://agripro.free.nf/",
+    },
     {
       title: "NetFlix Clone",
       description:
