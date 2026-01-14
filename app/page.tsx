@@ -52,7 +52,7 @@ export default function Portfolio() {
         "TypeScript",
       ],
       image: "/agripro.png",
-      link: "https://agripro.free.nf/",
+      link: "https://agripro-five.vercel.app/",
     },
     {
       title: "NetFlix Clone",
