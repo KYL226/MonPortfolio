@@ -38,7 +38,7 @@ export default function Portfolio() {
   }, []);
 
   const projects = [
-     {
+    {
       title: "AgriPro",
       description:
         "AgriPro est une plateforme web communautaire et intelligente dédiée au monde agricole. Elle a été conçue pour répondre aux principaux défis rencontrés par les agriculteurs : l’isolement, la difficulté à vendre leurs produits, le manque d’accès à l’information et l’absence d’un espace centralisé pour échanger.",
@@ -52,22 +52,22 @@ export default function Portfolio() {
         "TypeScript",
       ],
       image: "/agripro.png",
-      link: "https://agripro-five.vercel.app/",
+      link: "https://agripro.dupoclic.com/",
     },
     {
-      title: "NetFlix Clone",
+      title: "Phishlab",
       description:
-        "Reproduction la Plateforme VOD NetFlix dans l'objectif d'avoir le code source d'un site VOD qui pourra être adapter pour mes projets futurs",
+        "Plateforme de sensibilisation au phishing avec des simulations d'attaques, des ressources éducatives et des outils de reporting pour aider les utilisateurs à reconnaître et à se protéger contre les tentatives de phishing.",
       tech: [
         "next.js",
         "Node.js",
-        "MongoDB",
+        "MySQL",
         "Tailwind CSS",
         "TypeScript",
-        "Moyen de paiement",
+        "Pixel de suivi",
       ],
-      image: "/clone_netflix.png",
-      link: "https://clone-netflix-navy.vercel.app/",
+      image: "/phishlab.png",
+      link: "https://phishlab.dupoclic.com/",
     },
     {
       title: "ATTESSIA",
@@ -76,6 +76,21 @@ export default function Portfolio() {
       tech: ["php", "mysql", "bootstrap", "html", "css"],
       image: "/attessia.png",
       link: "https://dupoclic.com/attestationmvc/",
+    },
+    {
+      title: "Smart",
+      description:
+        "SmartData consulting vous accompagne dans l'analyse statistique de vos données pour optimiser votre stratégie et prendre des décisions basées sur des faits concrets.",
+      tech: [
+        "next.js",
+        "Node.js",
+        "Mysql",
+        "Tailwind CSS",
+        "Cloudinary",
+        "TypeScript",
+      ],
+      image: "/smart.png",
+      link: "https://smartdata-one.vercel.app/",
     },
     {
       title: "CHATROOM",
@@ -94,11 +109,33 @@ export default function Portfolio() {
       link: "https://github.com/KYL226/chatroom",
     },
     {
+      title: "NetFlix Clone",
+      description:
+        "Reproduction la Plateforme VOD NetFlix dans l'objectif d'avoir le code source d'un site VOD qui pourra être adapter pour mes projets futurs",
+      tech: [
+        "next.js",
+        "Node.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "TypeScript",
+        "Moyen de paiement",
+      ],
+      image: "/clone_netflix.png",
+      link: "https://clone-netflix-navy.vercel.app/",
+    },
+    {
       title: "VoiceHub",
       description: "Plateforme de publication en audio",
       tech: ["php", "mysql", "bootstrap", "html", "css", "phpmailer"],
       image: "/voicehub.png",
       link: "https://dupoclic.com/socio-vocal/",
+    },
+    {
+      title: "Lumière",
+      description: "Dashboard static pour apprendre la parole de DIEU (bible)",
+      tech: ["React"],
+      image: "/lumiere.png",
+      link: "https://lumiere.dupoclic.com/",
     },
     {
       title: "Jeu de couleur",
@@ -307,7 +344,7 @@ export default function Portfolio() {
                   } catch (error) {
                     console.error(
                       "Erreur lors du téléchargement du CV:",
-                      error
+                      error,
                     );
                     // Fallback: ouvrir dans un nouvel onglet
                     window.open("/images/cv.pdf", "_blank");
@@ -454,7 +491,7 @@ export default function Portfolio() {
                         window.open(
                           project.link,
                           "_blank",
-                          "noopener,noreferrer"
+                          "noopener,noreferrer",
                         );
                       } else {
                         console.log("Lien du projet non disponible");
@@ -497,7 +534,7 @@ export default function Portfolio() {
                   >
                     {page}
                   </Button>
-                )
+                ),
               )}
             </div>
 
@@ -611,7 +648,9 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">© 2025 Portfolio.</p>
+          <p className="text-muted-foreground">
+            © {new Date().getFullYear()} Portfolio.
+          </p>
         </div>
       </footer>
     </div>
